@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Morgan — Creative Developer & Web Designer</title>
+
+    <!-- Fontes Google: Syne para títulos arrojados e Inter para leitura técnica -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ---------------- VARIÁVEIS & RESET ---------------- */
+        :root {
+            --bg: #030304;
+            --card-bg: #0a0a0c;
+            --border: #1a1a1f;
+            --accent: #2c6ff6;
+            --accent-glow: rgba(44, 111, 246, 0.3);
+            --text-main: #f5f5f7;
+            --text-muted: #80808a;
+            --text-dim: #4d4d57;
+            --font-display: 'Syne', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        /* ---------------- CONTAINER PRINCIPAL ---------------- */
+        .portfolio-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            border-left: 1px solid var(--border);
+            border-right: 1px solid var(--border);
+            position: relative;
+        }
+
+        /* ---------------- HEADER / TOP BAR ---------------- */
+        header {
+            display: grid;
+            grid-template-columns: 80px 1fr 1fr 1fr;
+            align-items: center;
+            padding: 24px 32px;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+        }
+
+        .logo-mark {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--accent);
+            line-height: 1;
+            font-family: var(--font-display);
+        }
+
+        .header-col-title {
+            color: var(--text-muted);
+            margin-bottom: 2px;
+        }
+
+        .header-col-value {
+            color: var(--text-main);
+        }
+
+        .header-col-value.accent {
+            color: var(--accent);
+        }
+
+        /* ---------------- HERO SECTION ---------------- */
+        .hero {
+            position: relative;
+            min-height: 580px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+            padding: 30px 32px 40px 100px;
+            overflow: hidden;
+        }
+
+        /* Barra Lateral Esquerda */
+        .hero-side-bar {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            z-index: 10;
+        }
+
+        .side-socials {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .side-socials a:hover {
+            color: var(--accent);
+        }
+
+        .side-copyright {
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            letter-spacing: 0.15em;
+            font-size: 0.65rem;
+            color: var(--text-dim);
+        }
+
+        /* Tipografia Gigante PORT / FOLIO */
+        .hero-bg-text {
+            position: relative;
+            z-index: 1;
+            user-select: none;
+        }
+
+        .hero-word {
+            font-family: var(--font-display);
+            font-size: clamp(5.5rem, 13vw, 12rem);
+            line-height: 0.82;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .word-port {
+            color: #ffffff;
+        }
+
+        .word-folio {
+            color: var(--accent);
+        }
+
+        /* Foto Sobreposta ao Fundo */
+        .hero-character-img {
+            position: absolute;
+            right: 16%;
+            top: 20px;
+            height: 105%;
+            z-index: 2;
+            filter: grayscale(100%) contrast(1.15) brightness(0.95);
+            mix-blend-mode: lighten;
+            pointer-events: none;
+            object-fit: cover;
+        }
+
+        /* Coluna Direita com Apresentação */
+        .hero-intro-box {
+            position: absolute;
+            right: 32px;
+            top: 150px;
+            max-width: 200px;
+            z-index: 5;
+        }
+
+        .hero-hello {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-name {
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            font-weight: 800;
+            line-height: 1.1;
+            text-transform: uppercase;
+            margin: 4px 0 16px 0;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-divider {
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent);
+            margin-bottom: 18px;
+        }
+
+        .hero-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .hero-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+        }
+
+        /* ---------------- SEÇÃO INFO (ABOUT, SKILLS, STATS) ---------------- */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1.5fr 1.2fr;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .info-col {
+            padding: 36px 32px;
+            border-right: 1px solid var(--border);
+        }
+
+        .info-col:last-child {
+            border-right: none;
+        }
+
+        .col-label {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            margin-bottom: 22px;
+            display: block;
+        }
+
+        .about-heading {
+            font-family: var(--font-display);
+            font-size: 1.45rem;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 18px;
+        }
+
+        .about-text {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* Lista de Habilidades / What I Do */
+        .skills-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .skill-icon {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            width: 22px;
+            text-align: center;
+            margin-top: 2px;
+            font-family: monospace;
+        }
+
+        .skill-info h4 {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .skill-info p {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            line-height: 1.35;
+        }
+
+        /* Estatísticas */
+        .stats-header-quote {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+            line-height: 1.4;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+
+        .stats-items {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .stat-row {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .stat-desc {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        /* ---------------- SELECTED WORK ---------------- */
+        .section-header-bar {
+            padding: 20px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+            font-weight: 700;
+        }
+
+        .section-more-link {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .work-card {
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            background: var(--bg);
+            transition: background 0.3s ease;
+        }
+
+        .work-card:last-child {
+            border-right: none;
+        }
+
+        .work-card:hover {
+            background: rgba(255, 255, 255, 0.015);
+        }
+
+        .card-preview {
+            height: 230px;
+            position: relative;
+            border-bottom: 1px solid var(--border);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+
+        .badge-num {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        /* Simuladores de interface dentro dos cards */
+        .preview-c1 {
+            background: linear-gradient(135deg, #091325 0%, #03050a 100%);
+        }
+
+        .c1-ui-mockup {
+            margin-top: 30px;
+            background: #0d1117;
+            border: 1px solid #21262d;
+            border-radius: 6px;
+            height: 120px;
+            padding: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .c1-title {
+            font-size: 0.95rem;
+            font-family: var(--font-display);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-top: 10px;
+        }
+
+        .preview-c2 {
+            background: #080808;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .c2-title {
+            font-family: serif;
+            font-size: 1.3rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+
+        .preview-c3 {
+            background: #f8fafc;
+            color: #0f172a;
+        }
+
+        .preview-c3 .badge-num {
+            color: var(--accent);
+        }
+
+        .c3-title {
+            font-size: 0.8rem;
+            font-weight: 800;
+            margin-top: 16px;
+            line-height: 1.2;
+        }
+
+        .c3-ui-sheet {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 4px;
+            height: 110px;
+            margin-top: 12px;
+            padding: 8px;
+        }
+
+        .card-footer-info {
+            padding: 18px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .card-meta-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+
+        .card-client {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+
+        .card-tags {
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+            text-align: right;
+            line-height: 1.2;
+        }
+
+        .card-desc {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            line-height: 1.45;
+            margin-bottom: 16px;
+        }
+
+        .card-arrow {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        .work-card:hover .card-arrow {
+            color: var(--text-main);
+        }
+
+        /* ---------------- MY PROCESS ---------------- */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .process-step {
+            padding: 24px 20px 32px 20px;
+            border-right: 1px solid var(--border);
+        }
+
+        .process-step:last-child {
+            border-right: none;
+        }
+
+        .step-number {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .step-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+        }
+
+        .step-desc {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* ---------------- FOOTER / LET'S BUILD ---------------- */
+        footer {
+            display: grid;
+            grid-template-columns: 1.8fr 1.2fr 1fr;
+            padding: 48px 32px;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .cta-heading {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            font-weight: 900;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+        }
+
+        .cta-heading .accent {
+            color: var(--accent);
+        }
+
+        .cta-subtext {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            margin-top: 18px;
+            font-weight: 600;
+        }
+
+        .contact-block-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--accent);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .contact-list-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-list-item a:hover {
+            color: var(--text-main);
+        }
+
+        /* QR Code Card */
+        .qr-card {
+            border: 1px solid var(--border);
+            padding: 16px;
+            border-radius: 8px;
+            background: var(--card-bg);
+            text-align: center;
+        }
+
+        .qr-card-title {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-align: left;
+        }
+
+        .qr-image-wrapper {
+            background: #ffffff;
+            padding: 8px;
+            border-radius: 4px;
+            display: inline-block;
+            line-height: 0;
+        }
+
+        .qr-image-wrapper img {
+            width: 100px;
+            height: 100px;
+        }
+
+        /* ---------------- RESPONSIVIDADE ---------------- */
+        @media (max-width: 992px) {
+            .hero {
+                padding-left: 32px;
+            }
+
+            .hero-side-bar {
+                position: static;
+                width: 100%;
+                flex-direction: row;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding: 12px 0;
+            }
+
+            .side-socials {
+                flex-direction: row;
+            }
+
+            .side-copyright {
+                writing-mode: horizontal-tb;
+                transform: none;
+            }
+
+            .hero-character-img {
+                opacity: 0.25;
+                right: 0;
+            }
+
+            .hero-intro-box {
+                position: static;
+                margin-top: 30px;
+                max-width: 100%;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-col {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .work-card {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            footer {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="portfolio-wrapper">
+
+        <!-- HEADER -->
+        <header>
+            <div class="logo-mark">M</div>
+            <div>
+                <div class="header-col-title">Creative Developer</div>
+                <div class="header-col-value">& Web Designer</div>
+            </div>
+            <div>
+                <div class="header-col-title">Based In</div>
+                <div class="header-col-value accent">San Francisco, CA</div>
+            </div>
+            <div style="text-align: right;">
+                <div class="header-col-title">Available For</div>
+                <div class="header-col-value accent">Freelance & Full-time</div>
+            </div>
+        </header>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <!-- Barra lateral esquerda -->
+            <aside class="hero-side-bar">
+                <div class="side-socials">
+                    <a href="#" title="Globe">🌐</a>
+                    <a href="#" title="Behance">Bē</a>
+                    <a href="#" title="LinkedIn">in</a>
+                </div>
+                <div class="side-copyright">© 2026 ALEX MORGAN</div>
+            </aside>
+
+            <!-- Tipografia PORT / FOLIO -->
+            <div class="hero-bg-text">
+                <span class="hero-word word-port">PORT</span>
+                <span class="hero-word word-folio">FOLIO</span>
+            </div>
+
+            <!-- Imagem do Modelo / Designer com óculos de sol -->
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+                alt="Alex Morgan" class="hero-character-img" />
+
+            <!-- Bio / Box Direita -->
+            <div class="hero-intro-box">
+                <div class="hero-hello">Hello, I'm</div>
+                <h2 class="hero-name">Alex<br>Morgan</h2>
+                <div class="hero-divider"></div>
+                <p class="hero-desc">
+                    I build fast, modern and scalable digital experiences with clean code and intentional design.
+                </p>
+                <a href="#contact" class="hero-link">
+                    Let's Create Something Great ↗
+                </a>
+            </div>
+        </section>
+
+        <!-- INFO SECTION (ABOUT, WHAT I DO, STATS) -->
+        <section class="info-grid">
+            <!-- Coluna 1: About Me -->
+            <div class="info-col">
+                <span class="col-label">About Me</span>
+                <h3 class="about-heading">Design with purpose. Code with precision.</h3>
+                <p class="about-text">
+                    I'm a creative developer and web designer who turns ideas into powerful digital products.
+                    I blend UI/UX design, animation, and clean development to deliver seamless, engaging experiences.
+                </p>
+            </div>
+
+            <!-- Coluna 2: What I Do -->
+            <div class="info-col">
+                <span class="col-label">What I Do</span>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-icon">🖥</div>
+                        <div class="skill-info">
+                            <h4>Web Design</h4>
+                            <p>Modern, user-centered designs that convert.</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">&lt;/&gt;</div>
+                        <div class="skill-info">
+                            <h4>Web Development</h4>
+                            <p>Clean, scalable, and performance-focused code.</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">📱</div>
+                        <div class="skill-info">
+                            <h4>Responsive Design</h4>
+                            <p>Pixel-perfect across all devices and screens.</p>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon">⚡</div>
+                        <div class="skill-info">
+                            <h4>Interaction & Animation</h4>
+                            <p>Bringing interfaces to life with smooth animations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna 3: Estatísticas -->
+            <div class="info-col">
+                <p class="stats-header-quote">
+                    I turn complex problems into simple, beautiful solutions.
+                </p>
+                <div class="stats-items">
+                    <div class="stat-row">
+                        <span class="stat-number">4+</span>
+                        <span class="stat-desc">Years Experience</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-number">28+</span>
+                        <span class="stat-desc">Projects Completed</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-number">18+</span>
+                        <span class="stat-desc">Clients</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SELECTED WORK HEADER -->
+        <div class="section-header-bar">
+            <span class="section-title">Selected Work</span>
+            <a href="#" class="section-more-link">View All Projects ↗</a>
+        </div>
+
+        <!-- WORK CARDS -->
+        <section class="work-grid">
+            <!-- Card 1 -->
+            <article class="work-card">
+                <div class="card-preview preview-c1">
+                    <span class="badge-num">01</span>
+                    <div class="c1-title">NEXT-GEN<br>DIGITAL BANKING</div>
+                    <div class="c1-ui-mockup"></div>
+                </div>
+                <div class="card-footer-info">
+                    <div>
+                        <div class="card-meta-row">
+                            <h4 class="card-client">FINANCE X</h4>
+                            <span class="card-tags">Web Design<br>Development</span>
+                        </div>
+                        <p class="card-desc">Modern banking platform focused on clarity, trust, and performance.</p>
+                    </div>
+                    <div class="card-arrow">↗</div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="work-card">
+                <div class="card-preview preview-c2">
+                    <span class="badge-num">02</span>
+                    <div class="c2-title">ICONIC<br>WARDROBE</div>
+                </div>
+                <div class="card-footer-info">
+                    <div>
+                        <div class="card-meta-row">
+                            <h4 class="card-client">ICONIC CO.</h4>
+                            <span class="card-tags">Web Design<br>Development</span>
+                        </div>
+                        <p class="card-desc">Clean, editorial e-commerce experience for a premium fashion brand.</p>
+                    </div>
+                    <div class="card-arrow">↗</div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="work-card">
+                <div class="card-preview preview-c3">
+                    <span class="badge-num">03</span>
+                    <div class="c3-title">Your Workflow,<br>Smarter.</div>
+                    <div class="c3-ui-sheet"></div>
+                </div>
+                <div class="card-footer-info">
+                    <div>
+                        <div class="card-meta-row">
+                            <h4 class="card-client">FLOW DASHBOARD</h4>
+                            <span class="card-tags">Web Design<br>Development</span>
+                        </div>
+                        <p class="card-desc">Productivity dashboard that helps teams organize, track, and grow.</p>
+                    </div>
+                    <div class="card-arrow">↗</div>
+                </div>
+            </article>
+        </section>
+
+        <!-- PROCESS HEADER -->
+        <div class="section-header-bar">
+            <span class="section-title">My Process</span>
+            <span style="font-size: 0.65rem; color: var(--accent); font-weight: 700; text-transform: uppercase;">
+                A Clear Process. Better Results.
+            </span>
+        </div>
+
+        <!-- PROCESS STEPS -->
+        <section class="process-grid">
+            <div class="process-step">
+                <div class="step-number">01</div>
+                <h4 class="step-title">Discover</h4>
+                <p class="step-desc">Understanding your goals, audience, and project requirements.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">02</div>
+                <h4 class="step-title">Plan</h4>
+                <p class="step-desc">Strategy, user flow, and wireframing the right structure.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">03</div>
+                <h4 class="step-title">Design</h4>
+                <p class="step-desc">Crafting clean, modern UI with focus on usability & details.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">04</div>
+                <h4 class="step-title">Develop</h4>
+                <p class="step-desc">Bringing the design to life with clean, efficient code.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">05</div>
+                <h4 class="step-title">Launch</h4>
+                <p class="step-desc">Testing, optimizing, and delivering a seamless product.</p>
+            </div>
+        </section>
+
+        <!-- FOOTER / CONTACT -->
+        <footer id="contact">
+            <div>
+                <h2 class="cta-heading">
+                    Let's Build<br>
+                    <span class="accent">Something</span><br>
+                    Extraordinary.
+                </h2>
+                <div class="cta-subtext">I'm ready when you are.</div>
+            </div>
+
+            <div>
+                <div class="contact-block-title">Get In Touch</div>
+                <div class="contact-list">
+                    <div class="contact-list-item">
+                        <span>✉</span>
+                        <a href="mailto:hello@alexmorgan.dev">hello@alexmorgan.dev</a>
+                    </div>
+                    <div class="contact-list-item">
+                        <span>📞</span>
+                        <a href="tel:+14151234567">+1 (415) 123-4567</a>
+                    </div>
+                    <div class="contact-list-item">
+                        <span>📍</span>
+                        <span>San Francisco, CA</span>
+                    </div>
+                    <div class="contact-list-item">
+                        <span>🌐</span>
+                        <a href="https://alexmorgan.dev" target="_blank">alexmorgan.dev</a>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="qr-card">
+                    <div class="qr-card-title">Let's Connect</div>
+                    <div class="qr-image-wrapper">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://alexmorgan.dev&color=000000"
+                            alt="QR Code" />
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
