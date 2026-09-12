@@ -24,3 +24,7 @@ ${msg}`
         window.alert('Por favor, preencha o formulário para enviar uma mensagem!')
     }
 })
+// Mostra Ano
+const ano = document.getElementById('year')
+let anoAtual = new Date().getFullYear()
+ano.innerHTML = anoAtual
