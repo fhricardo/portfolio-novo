@@ -130,13 +130,14 @@ main {
             position: absolute;
             top: 0;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) rotate(30deg);
             border-bottom: 8px solid var(--primary);
 
             img {
                 width: 100%;
                 display: block;
                 filter: saturate(0);
+                transform: rotate(-30deg);
             }
         }
     }
@@ -258,14 +259,20 @@ main {
                     width: 100%;
                     aspect-ratio: 16/9;
                     background-color: var(--gray);
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
 
                 .text {
                     display: grid;
                     grid-template-columns: repeat(2, 1fr);
-                    grid-template-rows: 2;
+                    grid-template-rows: auto 1fr;
                     gap: 0.5rem;
-                    padding: 1rem;
+                    padding: 1rem 1rem .5rem 1rem;
                     align-items: end;
 
                     h3 {
@@ -296,6 +303,7 @@ main {
                         font-size: .75rem;
                         text-transform: uppercase;
                         font-family: var(--inter);
+                        justify-self: end;
                     }
 
                     .btnOpen {
@@ -304,12 +312,100 @@ main {
                         width: 2rem;
                         height: 2rem;
                         place-self: end;
+                        appearance: none;
+                        border: none;
+                        background-color: transparent;
 
                         i {
                             transform: rotate(-45deg);
                             font-size: 1.5rem;
+                            color: var(--gray);
+                            transition: 300ms ease all;
+
+                            &:hover {
+                                color: var(--primary);
+                                cursor: pointer;
+                            }
                         }
                     }
+                }
+            }
+        }
+    }
+
+    .contato {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto 1fr;
+        gap: 1rem;
+
+        h2 {
+            width: 100%;
+            font-size: 1.5rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            grid-column: span 2;
+            font-family: var(--inter);
+            font-weight: 300;
+        }
+
+        .dadosContato {
+            border: 1px solid var(--gray);
+            border-radius: .5rem;
+            padding: 1rem;
+        }
+
+        .formContato {
+            border: 1px solid var(--gray);
+            border-radius: .5rem;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+
+            label {
+                color: var(--gray);
+                font-family: var(--inter);
+                font-size: .875rem;
+                line-height: 1rem;
+            }
+
+            input {
+                width: 100%;
+                height: 2rem;
+                border: none;
+                border-radius: .25rem;
+                font-size: 1rem;
+                padding: 0.5rem;
+                color: var(--dark);
+            }
+
+            textarea {
+                width: 100%;
+                height: 4rem;
+                border: none;
+                border-radius: .25rem;
+                font-size: 1rem;
+                padding: 0.5rem;
+                color: var(--dark);
+                resize: none;
+            }
+
+            .btns {
+                width: 100%;
+                display: flex;
+                gap: 1rem;
+
+                button {
+                    width: 50%;
+                    height: 2rem;
+                    border: none;
+                    background-color: var(--primary);
+                    color: var(--light);
+                    border-radius: 2rem;
                 }
             }
         }
