@@ -34,16 +34,32 @@ const trabalhos = [
     {
         id: 1,
         title: 'Agregador de Links - Link in Bio',
-        tipo: 'Desenvolvimwento Web',
+        tipo: 'Desenvolvimento Web',
         foto: 'jobs/linkbio.webp',
-        descricao: 'Agregador de links para bio do Instagram, totalmente personalizável',
+        descricao: 'Projeto de um website Agregador de Links no estilo LinkTree, que permite a utilização de um único link em páginas de redes sociais, direcionando o usuário para diversos perfis e páginas.',
         link: 'https://fhricardo.github.io/agregador-de-links-front-end-1i-2026/'
     },
     {
         id: 2,
         title: 'Lista de Tarefas com localStorage',
-        tipo: 'Desenvolvimwento Web',
+        tipo: 'Desenvolvimento Web',
         foto: 'jobs/todolist.webp',
+        descricao: 'O projeto tem como objetivo criar uma lista de tarefas (to-do list) que pode ser alimentada dinamicamente e fica armazenada locamente utilizando o recurso localStorage do JavaScript',
+        link: 'https://fhricardo.github.io/to-do-list-front-end-1i-2026/'
+    },
+    {
+        id: 3,
+        title: 'Catálogo de Produtos',
+        tipo: 'Desenvolvimwento Web',
+        foto: 'jobs/catalogo.webp',
+        descricao: 'O projeto tem como objetivo criar um catálogo de produtos dinâmico utilizando HTML, CSS e JavaScript puro. Os produtos são carregados a partir de um arquivo JSON e exibidos em uma interface responsiva que permite busca, filtragem, ordenação, paginação e visualização detalhada dos itens.',
+        link: 'https://fhricardo.github.io/to-do-list-front-end-1i-2026/'
+    },
+    {
+        id: 4,
+        title: 'Página de Detalhes de Produto',
+        tipo: 'Desenvolvimwento Web',
+        foto: 'jobs/nike.webp',
         descricao: 'O projeto tem como objetivo criar uma lista de tarefas (to-do list) que pode ser alimentada dinamicamente e fica armazenada locamente utilizando o recurso localStorage do JavaScript',
         link: 'https://fhricardo.github.io/to-do-list-front-end-1i-2026/'
     }
