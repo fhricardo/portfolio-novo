@@ -53,15 +53,15 @@ const trabalhos = [
         tipo: 'Desenvolvimwento Web',
         foto: 'jobs/catalogo.webp',
         descricao: 'O projeto tem como objetivo criar um catálogo de produtos dinâmico utilizando HTML, CSS e JavaScript puro. Os produtos são carregados a partir de um arquivo JSON e exibidos em uma interface responsiva que permite busca, filtragem, ordenação, paginação e visualização detalhada dos itens.',
-        link: 'https://fhricardo.github.io/to-do-list-front-end-1i-2026/'
+        link: 'https://fhricardo.github.io/catalogo-de-produtos-front-end-1i-2026/'
     },
     {
         id: 4,
-        title: 'Página de Detalhes de Produto',
+        title: 'Nike Air Jordan - Página de Detalhes',
         tipo: 'Desenvolvimwento Web',
         foto: 'jobs/nike.webp',
-        descricao: 'O projeto tem como objetivo criar uma lista de tarefas (to-do list) que pode ser alimentada dinamicamente e fica armazenada locamente utilizando o recurso localStorage do JavaScript',
-        link: 'https://fhricardo.github.io/to-do-list-front-end-1i-2026/'
+        descricao: 'Projeto prático de desenvolvimento web front-end focado na construção de uma página de exibição e detalhes do tênis Nike Air Jordan, com foco em semântica HTML, estilização moderna, responsividade e experiência do usuário (UX/UI).',
+        link: 'https://fhricardo.github.io/nike-air-jordan-detalhes/'
     }
 ]
 // Mostrar os cards
