@@ -73,47 +73,14 @@
                 </ul>
             </div>
         </section>
+        <!-- Trabalhos -->
         <section class="trabalhos" id="trabalhos">
             <h2>Trabalhos Selecionados</h2>
-            <div class="cards">
-                <div class="card">
-                    <div class="jobFoto"></div>
-                    <div class="text">
-                        <h3>title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint mollitia sed alias natus neque
-                            itaque minus ab architecto libero nemo?</p>
-                        <span class="tipo">Desenvolvimento Web</span>
-                        <button type="button" class="btnOpen">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="jobFoto"></div>
-                    <div class="text">
-                        <h3>title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint mollitia sed alias natus neque
-                            itaque minus ab architecto libero nemo?</p>
-                        <span class="tipo">Design UI/UX</span>
-                        <button type="button" class="btnOpen">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="jobFoto"></div>
-                    <div class="text">
-                        <h3>title</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint mollitia sed alias natus neque
-                            itaque minus ab architecto libero nemo?</p>
-                        <span class="tipo">Design Gráfico</span>
-                        <button type="button" class="btnOpen">
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </button>
-                    </div>
-                </div>
+            <div class="cards" id="cardsContainer">
+
             </div>
         </section>
+        <!-- Contato -->
         <section class="contato" id="contato">
             <h2>Entre em contato</h2>
             <div class="dadosContato">
@@ -150,6 +117,26 @@
             </form>
         </section>
     </main>
+    <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+        <div class="modal-content">
+            <button type="button" class="btnClose" aria-label="Fechar Modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="card modal-card">
+                <div class="jobFoto">
+                    <img id="modalImg" src="" alt="">
+                </div>
+                <div class="text">
+                    <h3 id="titleModal"></h3>
+                    <span class="tipo" id="modalTipo"></span>
+                    <p id="modalDesc"></p>
+                    <a href="" target="_blank" rel="noopener noreferrer" class="btnModalLink" id="modalLink">
+                        Ver projeto online <i class="fa-solid fa-square-up-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer>
         <p>&copy;<span id="year"></span>. Flávio Ricardo. Todos os direitos reservados.</p>
     </footer>

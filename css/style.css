@@ -20,6 +20,7 @@ body {
     width: 100%;
     padding: 1rem;
     background-color: var(--dark);
+    position: relative;
 }
 
 a {
@@ -480,6 +481,133 @@ main {
                 }
             }
         }
+    }
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: #00000080;
+    backdrop-filter: blur(8px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 300ms ease;
+
+    &.active {
+        display: flex;
+        opacity: 1;
+    }
+
+    .modal-content {
+        position: relative;
+        max-width: 600px;
+        width: 100%;
+        background-color: var(--dark);
+        border: 1px solid var(--light);
+        border-radius: 1rem;
+        padding: 1rem;
+        box-shadow: 0 .5rem 1rem #88888888;
+        animation: modalIn 300ms ease-in;
+
+        .btnClose {
+            position: absolute;
+            top: .5rem;
+            right: .5rem;
+            background-color: #fafafa80;
+            border: 1px solid var(--gray);
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light);
+            font-size: 1.25rem;
+            transition: 300ms ease all;
+
+            &:hover {
+                background-color: var(--primary);
+                border-color: var(--primary);
+                color: var(--light);
+            }
+        }
+
+        .modal-card {
+            border: none;
+
+            .jobFoto {
+                width: 100%;
+                max-height: 420px;
+                aspect-ratio: 9/16;
+                background-color: var(--gray);
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                gap: 0.7rem;
+                padding: 1rem;
+                align-items: flex-start;
+                font-family: var(--inter);
+
+                h3 {
+                    font-size: 1.25rem;
+                    color: var(--light);
+                    font-family: var(--oswald);
+                }
+
+                .tipo {
+                    color: var(--light);
+                    background-color: var(--primary);
+                    font-size: .75rem;
+                    padding: 0.25rem .5rem;
+                    border-radius: 1rem;
+                }
+
+                p {
+                    color: var(--light);
+                }
+
+                .btnModalLink {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0.5rem;
+                    border: 1px solid var(--primary);
+                    padding: .5rem 1rem;
+                    border-radius: 1.5rem;
+                    color: var(--primary);
+                    font-size: .875rem;
+                    font-weight: 600;
+
+                    &:hover {
+                        background-color: var(--light);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes modalIn {
+    from {
+        transform: translateY(20px) scale(.1);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
     }
 }
 
