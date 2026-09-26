@@ -46,7 +46,6 @@
 </head>
 
 <body>
-    <div class="showSize"></div>
     <header>
         <div class="logo">
             <img src="assets/flavio-ricardo-logo-300.webp" alt="">
@@ -180,16 +179,6 @@
     <footer>
         <p>&copy;<span id="year"></span>. Flávio Ricardo. Todos os direitos reservados.</p>
     </footer>
-    <script>
-        function mostraTamanho() {
-            const largura = window.innerWidth
-            const altura = window.innerHeight
-            const texto = document.querySelector('.showSize')
-            texto.innerHTML = `Width: ${largura}`
-        }
-        mostraTamanho()
-        window.addEventListener('resize', mostraTamanho)
-    </script>
 </body>
 
 </html>
