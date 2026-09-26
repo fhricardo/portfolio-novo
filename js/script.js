@@ -143,26 +143,53 @@ window.addEventListener('keydown', (e) => {
     }
 })
 // Menu
-const width = window.innerWidth
 const btnMenu = document.getElementById('btnMenu')
 const nav = document.querySelector('nav')
-btnMenu.addEventListener('click', (e) => {
-    nav.style.display = nav.style.display === 'none' ? 'flex' : 'none'
+
+function toggleMenu(forceClose = false) {
+    const isHidden = window.getComputedStyle(nav).display === 'none'
+
+    if (forceClose) {
+        nav.style.display = 'none'
+        btnMenu?.setAttribute('aria-expanded', 'false')
+        return
+    }
+
+    const nextState = isHidden ? 'flex' : 'none'
+    nav.style.display = nextState
+    btnMenu?.setAttribute('aria-expanded', String(isHidden))
+}
+
+// Alternar ao clicar no botão
+btnMenu?.addEventListener('click', (e) => {
+    e.stopPropagation()
+    toggleMenu()
 })
+
+// Fechar com a tecla Escape
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        nav.style.display = nav.style.display === 'none' ? 'flex' : 'none'
+        toggleMenu(true)
     }
 })
+
+// Fechar ao clicar fora (apenas em telas menores)
 document.addEventListener('click', (e) => {
-    if (!nav.contains(e.target) && !btnMenu.contains(e.target)) {
-        nav.style.display = 'none'
+    if (window.innerWidth < 1025) {
+        if (nav && !nav.contains(e.target) && !btnMenu?.contains(e.target)) {
+            toggleMenu(true)
+        }
     }
 })
+
+// Tratar redimensionamento dinâmico
 window.addEventListener('resize', () => {
-    if (width >= 1025) {
-        nav.style.display = 'flex'
+    if (window.innerWidth >= 1025) {
+        // Remove o inline style para deixar o CSS Desktop mandar
+        nav.style.removeProperty('display')
+        btnMenu?.setAttribute('aria-expanded', 'false')
     } else {
+        // Garante que comece fechado se voltar para mobile
         nav.style.display = 'none'
     }
 })
